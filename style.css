@@ -1,0 +1,265 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background: linear-gradient(135deg, #16002b, #39005c, #10001c);
+    font-family: Arial, sans-serif;
+    color: white;
+}
+
+/* Main container */
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 100%;
+}
+
+h1 {
+    font-size: 60px;
+    margin-bottom: 5px;
+    text-shadow: 0 0 15px #ff66cc,
+                 0 0 30px #ff66cc;
+}
+
+p {
+    font-size: 22px;
+    margin-top: 5px;
+}
+
+/* ================= CAKE ================= */
+
+.cake {
+    position: relative;
+    width: 320px;
+    height: 270px;
+    margin: 15px auto 0;
+    overflow: visible;
+}
+
+
+
+/* Cake layers */
+.cake-layer {
+    position: absolute;
+    border-radius: 12px 12px 8px 8px;
+    background: linear-gradient(
+        to right,
+        #7b1e1e,
+        #d85b4c,
+        #ff8a70,
+        #b52d2d
+    );
+
+    box-shadow:
+        inset 0 8px 8px rgba(255,255,255,0.25),
+        inset 0 -10px 12px rgba(0,0,0,0.3),
+        0 8px 12px rgba(0,0,0,0.4);
+}
+
+/* Bottom layer */
+.bottom {
+    left: 45px;
+    bottom: 30px;
+    width: 230px;
+    height: 70px;
+}
+
+/* Middle layer */
+.middle {
+    left: 60px;
+    bottom: 90px;
+    width: 200px;
+    height: 60px;
+}
+
+/* Top layer */
+.top {
+    left: 75px;
+    bottom: 142px;
+    width: 170px;
+    height: 55px;
+}
+
+/* Cream */
+.cream {
+    position: absolute;
+    left: 0;
+    top: -8px;
+    width: 100%;
+    height: 18px;
+    border-radius: 50%;
+    background: linear-gradient(#fff, #ffd8e8);
+    box-shadow: 0 3px 5px rgba(0,0,0,0.25);
+}
+
+/* Cream drips */
+.cream::before,
+.cream::after {
+    content: "";
+    position: absolute;
+    background: #ffd8e8;
+    width: 14px;
+    border-radius: 0 0 10px 10px;
+}
+
+.cream::before {
+    left: 30px;
+    top: 8px;
+    height: 18px;
+}
+
+.cream::after {
+    right: 35px;
+    top: 8px;
+    height: 14px;
+}
+
+/* Candle */
+.candle {
+    position: absolute;
+    left: 146px;
+    bottom: 190px;
+    width: 28px;
+    height: 55px;
+    border-radius: 5px;
+    background: repeating-linear-gradient(
+        45deg,
+        #ffffff 0px,
+        #ffffff 8px,
+        #ff4f81 8px,
+        #ff4f81 16px
+    );
+
+    box-shadow:
+        0 4px 8px rgba(0,0,0,0.4),
+        inset 2px 0 4px rgba(255,255,255,0.5);
+}
+
+/* Flame */
+.flame {
+    position: absolute;
+    left: 7px;
+    top: -32px;
+    width: 15px;
+    height: 28px;
+    border-radius: 50% 50% 50% 50%;
+    background: #ffd43b;
+    box-shadow:
+        0 0 10px #ffd43b,
+        0 0 25px #ff8c00;
+    animation: flicker 0.6s infinite alternate;
+}
+
+@keyframes flicker {
+    from {
+        transform: scale(1) rotate(-3deg);
+    }
+
+    to {
+        transform: scale(1.15) rotate(3deg);
+    }
+}
+
+/* ================= BALLOONS ================= */
+
+.balloon {
+    position: absolute;
+    width: 65px;
+    height: 80px;
+    border-radius: 50%;
+    bottom: -120px;
+
+    animation: fly 8s linear infinite;
+}
+
+.balloon::after {
+    content: "";
+    position: absolute;
+    top: 78px;
+    left: 32px;
+    width: 1px;
+    height: 100px;
+    background: white;
+}
+
+.b1 {
+    left: 5%;
+    background: #ff4f81;
+}
+
+.b2 {
+    left: 18%;
+    background: #5ecbff;
+    animation-delay: 2s;
+}
+
+.b3 {
+    left: 32%;
+    background: #ffd43b;
+    animation-delay: 4s;
+}
+
+.b4 {
+    left: 48%;
+    background: #a66cff;
+    animation-delay: 1s;
+}
+
+.b5 {
+    left: 63%;
+    background: #ff6f61;
+    animation-delay: 3s;
+}
+
+.b6 {
+    left: 76%;
+    background: #4ee0a1;
+    animation-delay: 5s;
+}
+
+.b7 {
+    left: 88%;
+    background: #ff8f3d;
+    animation-delay: 1.5s;
+}
+
+.b8 {
+    left: 42%;
+    background: #ff66cc;
+    animation-delay: 6s;
+}
+
+/* Balloon flying */
+@keyframes fly {
+
+    0% {
+        bottom: -120px;
+        transform: translateX(0) rotate(0deg);
+    }
+
+    25% {
+        transform: translateX(30px) rotate(5deg);
+    }
+
+    50% {
+        transform: translateX(-25px) rotate(-5deg);
+    }
+
+    75% {
+        transform: translateX(20px) rotate(4deg);
+    }
+
+    100% {
+        bottom: 110vh;
+        transform: translateX(-20px) rotate(-4deg);
+    }
+}
